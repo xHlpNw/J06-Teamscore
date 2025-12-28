@@ -1,10 +1,9 @@
-package producer;
+package ru.teamscore.producer;
 
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import ru.teamscore.common.HibernateUtil;
 import ru.teamscore.common.entity.SensorMessage;
-import ru.teamscore.producer.RandomSensorFactory;
 
 import java.util.Random;
 
