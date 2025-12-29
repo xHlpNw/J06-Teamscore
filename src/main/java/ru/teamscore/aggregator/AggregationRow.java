@@ -5,5 +5,4 @@ import java.time.LocalDateTime;
 public record AggregationRow(
         String deviceName,
         LocalDateTime intervalStart,
-        double averageValue
-) {}
+        double[] avgValues) { }
