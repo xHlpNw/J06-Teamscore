@@ -1,3 +1,8 @@
 package ru.teamscore.common.dto;
 
-public record BarometerDTO(double air_pressure) { }
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+public record BarometerDTO(
+        @JsonProperty("air_pressure")
+        double airPressure
+) { }

@@ -1,4 +1,4 @@
-package consumer;
+package ru.teamscore.consumer;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
