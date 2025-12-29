@@ -20,14 +20,12 @@ public class SensorMessageRepositoryTest {
     private static SessionFactory sessionFactory =
             HibernateUtil.getSessionFactory();
     private EntityManager em;
-    private SensorMessageRepository repository;
 
     @BeforeEach
     void setUp() {
         em = sessionFactory
                 .openSession()
                 .unwrap(EntityManager.class);
-        repository = new SensorMessageRepository(em);
         em.getTransaction().begin();
 
         SensorMessage first = RandomSensorFactory.create();
@@ -55,7 +53,7 @@ public class SensorMessageRepositoryTest {
     @Test
     void returnsOnlyUnprocessedMessages() {
         em.getTransaction().begin();
-        List<SensorMessage> results = repository.findUnprocessed(10);
+        List<SensorMessage> results = SensorMessageRepository.findUnprocessed(em, 10);
         em.getTransaction().commit();
         assertEquals(2, results.size());
     }

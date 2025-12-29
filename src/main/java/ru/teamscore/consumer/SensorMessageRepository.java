@@ -2,16 +2,15 @@ package ru.teamscore.consumer;
 
 import jakarta.persistence.EntityManager;
 import lombok.AllArgsConstructor;
+import org.hibernate.Session;
 import ru.teamscore.common.entity.SensorMessage;
 
 import java.util.List;
 
 @AllArgsConstructor
 public class SensorMessageRepository {
-    private final EntityManager manager;
-
-    public List<SensorMessage> findUnprocessed(int limit) {
-        return manager.createQuery(
+    public static List<SensorMessage> findUnprocessed(EntityManager em, int limit) {
+        return em.createQuery(
                 """
                     SELECT sm
                     FROM SensorMessage sm
