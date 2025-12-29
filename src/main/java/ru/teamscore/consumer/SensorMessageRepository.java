@@ -15,7 +15,7 @@ public class SensorMessageRepository {
                 """
                     SELECT sm
                     FROM SensorMessage sm
-                    WHERE sm.id NOT EXISTS (
+                    WHERE sm.id NOT IN (
                         SELECT pm.messageId from ProcessedMessage pm
                     )
                     ORDER BY sm.savedAt
