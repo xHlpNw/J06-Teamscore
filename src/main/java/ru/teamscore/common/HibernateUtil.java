@@ -2,6 +2,7 @@ package ru.teamscore.common;
 
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
+import ru.teamscore.common.entity.ProcessedMessage;
 import ru.teamscore.common.entity.SensorMessage;
 
 public class HibernateUtil {
@@ -11,6 +12,7 @@ public class HibernateUtil {
         try {
             return new Configuration()
                     .addAnnotatedClass(SensorMessage.class)
+                    .addAnnotatedClass(ProcessedMessage.class)
                     .buildSessionFactory();
         } catch (Exception e) {
             throw new ExceptionInInitializerError(e);
