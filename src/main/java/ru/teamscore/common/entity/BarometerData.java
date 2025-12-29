@@ -23,15 +23,15 @@ public class BarometerData {
     @Column(nullable = false)
     private UUID id;
 
-    @Column(nullable = false)
+    @Column(nullable = false, name = "sensor_id")
     private UUID sensorId;
 
-    @Column(length = 32, nullable = false)
+    @Column(length = 32, nullable = false, name = "device_name")
     private String deviceName;
 
-    @Column(nullable = false)
+    @Column(nullable = false, name = "measured_at")
     private LocalDateTime measuredAt;
 
-    @Column(nullable = false)
+    @Column(nullable = false, name = "air_pressure")
     private double airPressure;
 }
